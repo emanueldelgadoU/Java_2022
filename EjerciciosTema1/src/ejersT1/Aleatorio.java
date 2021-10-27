@@ -41,8 +41,8 @@ public class Aleatorio {
 		System.out.println("Raro ");
 		
 		aleatorio = (int) (Math.random() * 126);
-		while ( (aleatorio != 5) || (aleatorio != 7) ||
-				(aleatorio != 33) || (aleatorio != 125) || (aleatorio != 77) ) {
+		while ( (aleatorio != 5) && (aleatorio != 7) && 
+				(aleatorio != 33) && (aleatorio != 125) && (aleatorio != 77) ) {
 			
 			aleatorio = (int) (Math.random() * 126);
 		}		 
