@@ -21,11 +21,11 @@ public class Game {
 		System.out.println("      /  ()  \\                    /  ()  \\");
 		System.out.println("    _ \\ '--' /                  _ \\ '--' /");
 		System.out.println("   { '-`\"\"\"\"`-' }              { '-`\"\"\"\"`-' }");
-		System.out.println("    `\"/  1  \\\"`\\               `\"/   2  \\\"`\\");
+		System.out.println("    `\"/  1   \\\"`                `\"/   2  \\\"`");
 		System.out.println("      \\      /                    \\      /");
 		System.out.println("     _/  /\\  \\_                  _/  /\\  \\_");
 		System.out.println("    {   /  \\   }                {   /  \\   }");
-		System.out.println("     `\"`    `\"`                 `\"`    `\"`");
+		System.out.println("     `\"`    `\"`                  `\"`    `\"`");
 		System.out.println();
 		System.out.println("         "+vidaJugador1+"                          "+vidaJugador2);
 	}
