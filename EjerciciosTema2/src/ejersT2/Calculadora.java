@@ -15,44 +15,44 @@ public class Calculadora {
 			n1=0;
 			n2=0;
 			
-			//Mostrar menú
-			System.out.println("CALCULADORA. Selecciona opción:");
+			//Mostrar menï¿½
+			System.out.println("CALCULADORA. Selecciona opcion:");
 			System.out.println("1.Sumar");
 			System.out.println("2.Restar");
 			System.out.println("3.Multiplicar");
 			System.out.println("4.Dividir");
 			System.out.println("5.Salir");
 			
-			//Leemos opción
+			//Leemos opciï¿½n
 			try {
 				opcion = Integer.parseInt(sc.nextLine());
 			} catch (NumberFormatException ex) {
-				System.out.println("Opción no válida");
-				continue; //Si hay error termina esta pasada del bucle y vuelve a mostrar el menú
+				System.out.println("Opciï¿½n no vï¿½lida");
+				continue; //Si hay error termina esta pasada del bucle y vuelve a mostrar el menï¿½
 			}
 			
-			//Si la opción no es 5 pedimos los operandos, si no se saldrá del programa en el switch
+			//Si la opciï¿½n no es 5 pedimos los operandos, si no se saldrï¿½ del programa en el switch
 			if (opcion != 5) {
 				//Leemos operandos
 				System.out.println("Introduce primer operando");
 				try {
 					n1 = Double.parseDouble(sc.nextLine());
 				} catch (Exception ex) {
-					System.out.println("Primer número incorrecto " + ex.getMessage());
-					continue; //Si hay error termina esta pasada del bucle y vuelve a mostrar el menú
+					System.out.println("Primer nï¿½mero incorrecto " + ex.getMessage());
+					continue; //Si hay error termina esta pasada del bucle y vuelve a mostrar el menï¿½
 				}
 				
 				System.out.println("Introduce segundo operando");
 				try {
 					n2 = Double.parseDouble(sc.nextLine());
 				} catch (Exception ex) {
-					System.out.println("Segundo número incorrecto " + ex.getMessage());
-					continue; //Si hay error termina esta pasada del bucle y vuelve a mostrar el menú
+					System.out.println("Segundo nï¿½mero incorrecto " + ex.getMessage());
+					continue; //Si hay error termina esta pasada del bucle y vuelve a mostrar el menï¿½
 				}
 			}
 			
 			
-			//Según la opción operamos los dos números
+			//Segï¿½n la opciï¿½n operamos los dos nï¿½meros
 			switch (opcion) {
 				case 1: {
 					System.out.println("Sumando "+n1+" con "+n2+" = "+(n1+n2));
@@ -71,7 +71,7 @@ public class Calculadora {
 					break;
 				}
 				case 5: {
-					System.out.println("Adiós ...");
+					System.out.println("Adiï¿½s ...");
 					return;
 				}
 			}
