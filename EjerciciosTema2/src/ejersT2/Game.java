@@ -27,7 +27,7 @@ public class Game {
 		System.out.println("    {   /  \\   }                {   /  \\   }");
 		System.out.println("     `\"`    `\"`                 `\"`    `\"`");
 		System.out.println();
-		System.out.println("         "+vidaJugador1+"                       "+vidaJugador2);
+		System.out.println("         "+vidaJugador1+"                          "+vidaJugador2);
 	}
 	
 	public static void main(String[] args) {
