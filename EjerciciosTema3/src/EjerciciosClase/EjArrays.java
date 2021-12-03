@@ -2,7 +2,7 @@ package EjerciciosClase;
 
 import java.util.Scanner;
 
-public class Arrays {
+public class EjArrays {
 
 	public static void pintarVector(int numeros[]) {
 		//notas.length nos dice el tamaño del array --> notas.length = 10
