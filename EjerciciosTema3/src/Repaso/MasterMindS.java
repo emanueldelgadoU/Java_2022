@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class MasterMindS {
 
+	/**
+	 * Genera combinación aleatoria de dígitos (0 - 9)
+	 * @param vector, donde se guarda la combinación
+	 */
 	public static void generarPalabra(int vector[]) {
 		for(int i=0; i<vector.length; i++) {
 			vector[i] = (int) (Math.random() * 9) + 1;
@@ -12,6 +16,13 @@ public class MasterMindS {
 		
 	}
 	
+	/**
+	 * Comprueba los aciertos que hay entre mi propuesta y la palabra a acertar
+	 * @param String propuesta - Lo que yo escribo para ver si he acertado
+	 * @param int[] palabra - La combinación generada aleatoriamente
+	 * @return El número de coincidencias. Pasa cada caracter de la propuesta
+	 * a int, usando Character.getNumericValue(), y así poder compara int con int
+	 */
 	public static int contarAciertos(String propuesta, int palabra[]) {
 		int aciertos = 0;
 		int vectorS[] = new int[palabra.length];
@@ -60,8 +71,10 @@ public class MasterMindS {
 					e.printStackTrace();
 				}
 				
+				//Longitud entre 3 y 8
 				if ((longitud > 2) && (longitud < 9)) {
 					int palabra[] = new int[longitud];
+					//Se genera la combinación de ints de esa longitud
 					generarPalabra(palabra);
 					
 					//Intentar adivinarlo
