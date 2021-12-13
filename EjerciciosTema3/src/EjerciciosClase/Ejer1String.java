@@ -14,7 +14,7 @@ public class Ejer1String {
 			}*/
 			
 			switch (car) {
-				case 'a','e','i','o','u','á','é','í','ó','ú','A','E','I','O','U': {
+				case 'a','e','i','o','u','A','E','I','O','U': {
 					contador++;
 					break;
 				}
