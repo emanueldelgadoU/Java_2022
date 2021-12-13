@@ -1,29 +1,28 @@
 package Repaso;
 
+import java.util.Arrays;
+
 public class Examen5 {
 
-	public class Ejercicio5Examen {
-
-		public static int busqueda(int[]vector, int n) {
+		
+		public static int busqueda(int[]vector, int x) {
 			int i=0;
-			int j=n-1;
+			int j=vector.length-1;
 			int mid=0;
-			while(i<j){
-				mid=i+(i-j)/2;
+			while(i <= j){
+				mid=i+(j-i)/2;
 
-				if (vector[mid]==j) {
-					break;
-				}
-				if (vector[mid]<j) {
+				if (vector[mid]==x) 
+					return mid;
+				
+				if (vector[mid]<x) 
 					i=mid+1;
-				}else if(vector[mid]>j) {
+				
+				if(vector[mid]>x) 
 					j=mid-1;
-				}else {
-					return -1;
-				}
-
+				
 			}
-			return mid;
+			return -1;
 
 		}
 		
@@ -38,12 +37,19 @@ public class Examen5 {
 			int vector[] = new int[20];
 			
 			for(int i=0; i<vector.length; i++) {
-				vector[i] = (int) (Math.random() * 10) + 1;
+				vector[i] = (int) (Math.random() * 20) + 1;
 			}
 			
 			pintar(vector);
+			
+			Arrays.sort(vector);
+			
+			pintar(vector);
+			
+			System.out.println("La posición del elemento buscado es " + busqueda(vector,15));
+			
 		}
 		
-	}
+	
 
 }
