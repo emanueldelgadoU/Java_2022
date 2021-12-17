@@ -3,9 +3,9 @@ package Ejercicios;
 public class Ejercicio1 {
 
 	/**
-	 * Método que calcula el factorial de un número decimal
+	 * Mï¿½todo que calcula el factorial de un nï¿½mero decimal
 	 * @param num
-	 * @return Lo multiplica por todos los números menores que él
+	 * @return Lo multiplica por todos los nï¿½meros menores que ï¿½l
 	 */
 	public static double factorial(double num) {
 		double fact=1;
@@ -21,7 +21,7 @@ public class Ejercicio1 {
 	}
 	
 	/**
-	 * Calcula el número de Euler con una precisión de 0.00000000001
+	 * Calcula el nï¿½mero de Euler con una precisiï¿½n de 0.00000000001
 	 * @return
 	 */
 	public static double euler() {
