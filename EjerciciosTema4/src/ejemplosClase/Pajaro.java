@@ -5,6 +5,26 @@ public class Pajaro {
 	//Propiedades
 	private int edad;
 	private char color;
+	private String nombre;
+	
+	//Constructores
+	Pajaro() {
+		edad = 0;
+		color = 'a';
+		nombre = "notiene";
+	}
+	
+	Pajaro(int e) {
+		edad = e;
+		color = 'a';
+		nombre = "notiene";
+	}
+	
+	Pajaro(int e, char c, String n) {
+		edad = e;
+		color = c;
+		nombre = n;
+	}
 	
 	//Métodos
 	public void setEdad(int edad) {
@@ -15,8 +35,16 @@ public class Pajaro {
 		this.color = color;
 	}
 	
+	public void setNombre(String n) {
+		this.nombre = n;
+	}
+	
 	public void printEdad() {
 		System.out.println(edad);
+	}
+	
+	public void printNombre() {
+		System.out.println(nombre);
 	}
 	
 	public void printColor() {
