@@ -9,6 +9,10 @@ public class Jugador {
 	private int damageMagico;
 	private String nombre;
 	private String clase;
+	private Arma armaDerecha;
+	private Arma armaIzquierda;
+	
+	public static int numJugadores=0; //Común a todos los jugadores
 	
 	//Constructores
 	Jugador() {
@@ -18,20 +22,43 @@ public class Jugador {
 		this.damageMagico = 15;
 		this.nombre = "Joselito";
 		this.clase = "Mago";
+		this.armaDerecha = null;
+		this.armaIzquierda = null;
+		Jugador.numJugadores++;
 	}
 
-	public Jugador(int vida, int mana, int damageFisico, int damageMagico, String nombre, String clase) {
+	public Jugador(int vida, int mana, int damageFisico, int damageMagico, String nombre, String clase, Arma armaD, Arma armaI) {
 		this.vida = vida;
 		this.mana = mana;
 		this.damageFisico = damageFisico;
 		this.damageMagico = damageMagico;
 		this.nombre = nombre;
 		this.clase = clase;
+		this.armaDerecha = armaD;
+		this.armaIzquierda = armaI;
+		Jugador.numJugadores++;
 	}
 
 	//Getters y setters
+	
 	public String getNombre() {
 		return nombre;
+	}
+
+	public Arma getArmaDerecha() {
+		return armaDerecha;
+	}
+
+	public void setArmaDerecha(Arma armaDerecha) {
+		this.armaDerecha = armaDerecha;
+	}
+
+	public Arma getArmaIzquierda() {
+		return armaIzquierda;
+	}
+
+	public void setArmaIzquierda(Arma armaIzquierda) {
+		this.armaIzquierda = armaIzquierda;
 	}
 
 	public void setNombre(String nombre) {
@@ -102,15 +129,6 @@ public class Jugador {
 	
 	
 	
-
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
 }
+
+
