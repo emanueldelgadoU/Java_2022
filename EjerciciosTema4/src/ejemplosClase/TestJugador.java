@@ -7,7 +7,7 @@ public class TestJugador {
 		Jugador player1 = new Jugador();
 		System.out.println(player1);
 		
-		Arma espada = new Arma("EspadÃ³n",20,"fisico");
+		Arma espada = new Arma("Espadón",20,"fisico");
 		Jugador player2 = new Jugador(50, 50, 5, 3, "Bruja del infierno","Brujo",espada,null);
 		System.out.println(player2);
 		
