@@ -5,7 +5,7 @@ public class Finanzas {
 	private double cambioDolarEuro;
 	
 	public Finanzas() {
-		this.cambioDolarEuro = 0.88;
+		this.cambioDolarEuro = 1.36;
 	}
 
 	public Finanzas(double cambioDolarEuro) {
