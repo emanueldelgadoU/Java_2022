@@ -1,5 +1,7 @@
 package ejersClase;
 
+import java.util.Objects;
+
 public class Alumno implements Cloneable {
 
 	//PROPIEDADES
@@ -10,7 +12,7 @@ public class Alumno implements Cloneable {
 
 	
 	/**
-	 * Crea un nuevo alumno con su informaci�n por defecto
+	 * Crea un nuevo alumno con su informaci�n por defecto
 	 */
 	public Alumno() {
 		super();
@@ -29,11 +31,17 @@ public class Alumno implements Cloneable {
 		this.direccion = direccion;
 	}
 	
+	/**
+	 * Constructor copia
+	 * @param Alumno otro 
+	 */
 	public Alumno(Alumno otro) {
 		this.nombre = otro.nombre;
 		this.email = otro.email;
 		this.edad = otro.edad;
-		this.direccion = otro.direccion;
+		//Para copiar la dirección (OBJETO) llamo a su constructor copia
+		//NO --> this.direccion = otra.direccion
+		this.direccion = new Direccion(otro.getDireccion());
 	}
 	
 	
@@ -61,18 +69,33 @@ public class Alumno implements Cloneable {
 		this.edad = edad;
 	}
 	
+	/**
+	 * @return the direccion
+	 */
 	public Direccion getDireccion() {
 		return direccion;
 	}
 
+	/**
+	 * @param direccion the direccion to set
+	 */
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
 
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		return super.clone();
+	protected Alumno clone() throws CloneNotSupportedException  {
+		// TODO Auto-generated method stub
+		//return super.clone();
+		
+		//Clonación profunda
+		Alumno al = new Alumno(this);
+		Direccion dir = new Direccion(this.direccion);
+		al.setDireccion(dir);
+
+		return al;
 	}
+	
 	
 	/*
 	 * Para no hacer casting en TestAlumno lo hago en el clone
@@ -82,6 +105,7 @@ public class Alumno implements Cloneable {
 		}
 	 */
 	
+
 
 	@Override
 	public String toString() {
@@ -97,6 +121,32 @@ public class Alumno implements Cloneable {
 		builder.append("]");
 		return builder.toString();
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(direccion, edad, email, nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumno other = (Alumno) obj;
+		return Objects.equals(direccion, other.direccion) && edad == other.edad && Objects.equals(email, other.email)
+				&& Objects.equals(nombre, other.nombre);
+	}
+
+
+
+	
+
+	
+	
+	
 	
 	
 	

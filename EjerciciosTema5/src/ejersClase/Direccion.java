@@ -1,5 +1,7 @@
 package ejersClase;
 
+import java.util.Objects;
+
 public class Direccion {
 
 	private String calle;
@@ -21,6 +23,13 @@ public class Direccion {
 		this.provincia = provincia;
 	}
 
+	public Direccion(Direccion otra) {
+		this.calle = otra.calle;
+		this.cp = otra.cp;
+		this.localidad = otra.localidad;
+		this.provincia = otra.provincia;
+	}
+	
 	public String getCalle() {
 		return calle;
 	}
@@ -67,6 +76,28 @@ public class Direccion {
 		builder.append("]");
 		return builder.toString();
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(calle, cp, localidad, provincia);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Direccion other = (Direccion) obj;
+		return Objects.equals(calle, other.calle) && Objects.equals(cp, other.cp)
+				&& Objects.equals(localidad, other.localidad) && Objects.equals(provincia, other.provincia);
+	}
+
+	
+	
+	
 	
 	
 	
