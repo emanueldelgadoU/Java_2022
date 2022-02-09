@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Expediente {
 
 	//TIPO ENUM definido para mi clase
-	enum Modalidad {FPB, GRADOMEDIO, GRADOSUPERIOR};
+	enum Modalidad {FPB, GRADOMEDIO, GRADOSUPERIOR, ESO, BACHILLERATO};
 	
 	//PROPIEDADES
 	private static int totalAlumnado=0; //Contador de objetos de tipo Expediente
@@ -224,6 +224,64 @@ public class Expediente {
 			return true;
 		
 		return false;
+	}
+	
+	/**
+	 * Calcula el número de suspenso del Expediente
+	 * @return
+	 */
+	public int getSuspensos() {
+		int contadorSusp = 0;
+		//Cada NotasCurso la va a ir metiendo en 'nc'
+		for(NotasCurso nc : this.getNotas()) {
+			if (nc.getNotaFinal() < 5) {
+				contadorSusp++;
+			}
+		}
+		return contadorSusp;
+	}
+	
+	/**
+	 * Devuelve true si está en ESO o Bachillerato y te quedan dos o menos
+	 * Devuelve true si está en Ciclo y apruebas todas
+	 * Devuelve false en caso contrario
+	 * @return
+	 */
+	public boolean titula() {
+		//Ver modalidad del expediente
+		if (this.modalidad == Modalidad.BACHILLERATO || this.modalidad == Modalidad.ESO) {
+			//Solo puede haber dos suspensas	
+			int contadorSusp = this.getSuspensos();
+			if (contadorSusp <= 2)
+				return true;
+			else
+				return false;
+			
+		} else {
+			//Hay que aprobarlas todas
+			int contadorSusp = this.getSuspensos();
+			if (contadorSusp == 0)
+				return true;
+			else 
+				return false;
+		}
+	}
+	
+	/**
+	 * Devuelve la media de las notas finales de cada NotasCurso en que está matriculado
+	 */
+	public double mediaExpediente() {
+		//Recorremos el ArrayList de NotasCurso y obtenemos la notafinal de cada
+		//Devolvemos la media
+		double media = 0;
+		int contadorMaterias = 0;
+		
+		for(NotasCurso nc : this.getNotas()) {
+			contadorMaterias++;			
+			media += nc.getNotaFinal();
+		}
+		
+		return media/contadorMaterias;
 	}
 	
 	
