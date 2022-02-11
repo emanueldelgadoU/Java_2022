@@ -30,7 +30,6 @@ public class TestExpediente {
 		System.out.println(alumno2.titula());
 		System.out.println(alumno2.mediaExpediente());
 
-		
 
 	}
 
