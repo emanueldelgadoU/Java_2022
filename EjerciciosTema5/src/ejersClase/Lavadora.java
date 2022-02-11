@@ -18,7 +18,7 @@ public class Lavadora extends Electrodomestico {
 
 	public Lavadora(String marca, String modelo, double precio, double peso, Eficiencia eficienciaE, Color color) {
 		super(marca, modelo, precio, peso, eficienciaE, color);
-		// TODO Auto-generated constructor stub
+		this.carga = 5;
 	}
 	
 	public Lavadora(String marca, String modelo, double precio, double peso, Eficiencia eficienciaE, Color color, int carga) {
@@ -55,14 +55,24 @@ public class Lavadora extends Electrodomestico {
 	}
 	
 	
-	public double precioFinal() {
+	public double precioFinal() {		
 		//Llama a precioFinal del padre "Electrodomestico"
+		/*
 		double precioF = super.precioFinal();
 		
 		if (this.carga > 8)
 			return precioF+50;
 		else
 			return precioF;
+		*/
+		
+		double precioF = 0;
+		if (this.carga > 8)
+			precioF += 50;
+		
+		precioF += super.precioFinal();
+		return precioF;
+		
 		
 	}
 	

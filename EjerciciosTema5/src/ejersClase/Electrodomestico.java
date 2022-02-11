@@ -99,7 +99,7 @@ public class Electrodomestico {
 	
 	
 	public double precioFinal() {
-		
+System.out.println("precio elec");		
 		double precioF=0;
 		
 		switch (this.eficienciaE) {
