@@ -1,9 +1,9 @@
 package ejersClase;
 
-import DadosPoker.Resultado;
 
 public class MetodoPokerChuleta {
 
+	/*
 public Resultado valorTirada() {
 		
 		//Poker real
@@ -108,4 +108,5 @@ public Resultado valorTirada() {
 		
 		return new Resultado(-1,-1);
 	}
+	*/
 }
