@@ -9,10 +9,14 @@ public class TestVehiculoTaxi {
 		
 		v.mensaje();
 		
-		/*
-		Vehiculo v2 = new Vehiculo("8888HIK","BMW");
-		Taxi mitaxi2 = (Taxi) v2;
-		 */
+		
+		
+		TaxiElectrico te = new TaxiElectrico("aaa4","Toyota","112233");
+		Vehiculo v2 = (Vehiculo) te;
+		Taxi t2 = (Taxi) te;
+		t2.mensaje();
+		 
+		
 	}
 
 }
