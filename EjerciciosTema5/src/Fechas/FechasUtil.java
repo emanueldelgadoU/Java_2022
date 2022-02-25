@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class FechasUtil {
 
@@ -61,6 +62,18 @@ public class FechasUtil {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 		LocalDateTime ldtt = LocalDateTime.parse("21/02/2022 21:23",dtf);
 		System.out.println(ldtt);
+		
+		//Formateo de fechas leída de teclado
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe una fecha por teclado (dd-mm-yyyy):");
+		String fechaString = sc.nextLine();
+		DateTimeFormatter dtform = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		try {	
+			LocalDate mifecha = LocalDate.parse(fechaString, dtform);
+			System.out.println(mifecha.getYear());
+		} catch(Exception e) {
+			System.out.println("No me has dado una fecha en el formato indicado");
+		}
 		
 		
 		
