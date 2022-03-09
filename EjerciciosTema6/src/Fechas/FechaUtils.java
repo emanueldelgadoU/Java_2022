@@ -62,6 +62,9 @@ public class FechaUtils {
 		FechaUtils.numYears(LocalDate.of(2000, 3, 2));
 		FechaUtils.cuentaAtras(LocalDateTime.of(2000,3,2,18,50,30), null);
 		
+		
+		Duration d = Duration.between(LocalDateTime.of(2022, 3,3,16,00,00), LocalDateTime.now());
+		System.out.println(d.toMinutes());
 	}
 	
 }
