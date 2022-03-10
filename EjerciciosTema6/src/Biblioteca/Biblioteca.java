@@ -72,6 +72,14 @@ public class Biblioteca {
 		}
 	}
 	
+	public void addUsuario(Usuario u) {
+		usuarios.add(u);
+	}
+	
+	public void addDocumento(Documento d) {
+		documentos.add(d);
+	}
+	
 	
 	
 	
