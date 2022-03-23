@@ -5,14 +5,17 @@ import java.util.Arrays;
 public class Ahorcado {
 
 	//Propiedades
-	private static String[] diccionario = { "pelota", "caramelo", "payaso", "centinela" };
+	public static String[] diccionario = { "pelota", "caramelo", "payaso", "centinela" };
 	
 	private String palabraAAdivinar;
 	private StringBuilder palabraIntentada; //Se puede hacer con StringBuilder
 	private StringBuilder letrasProbadas;
 	private int fallos;
 	
-	
+	/**
+	 * Constructor que genera una palabra a adivinar de forma aleatoria
+	 * Además pone los fallos a 0 para empezar a jugar
+	 */
 	public Ahorcado() {
 		//Elegir una palabra aleatoria del diccionario
 		int posicion = (int) (Math.random() * Ahorcado.diccionario.length);
@@ -161,3 +164,6 @@ public class Ahorcado {
 	
 	
 }
+
+
+

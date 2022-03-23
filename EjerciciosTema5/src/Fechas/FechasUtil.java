@@ -70,7 +70,8 @@ public class FechasUtil {
 		DateTimeFormatter dtform = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		try {	
 			LocalDate mifecha = LocalDate.parse(fechaString, dtform);
-			System.out.println(mifecha.getYear());
+			System.out.println(mifecha);
+			System.out.println(mifecha.format(dtform));
 		} catch(Exception e) {
 			System.out.println("No me has dado una fecha en el formato indicado");
 		}
