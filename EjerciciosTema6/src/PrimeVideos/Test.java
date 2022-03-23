@@ -29,7 +29,7 @@ public class Test {
 
 		for(int k=0; k<1000; k++) {
 			//Crea una serie
-			Serie serie = new Serie("Breaking Bad", true, 10);
+			Serie serie = new Serie("Breaking Bad", true, 1000);
 			for(int i=0; i<10; i++) {
 				Temporada t = new Temporada(i);
 				for(int j=0; j<10; j++) {
